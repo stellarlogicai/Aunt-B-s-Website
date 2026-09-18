@@ -4,9 +4,7 @@ import { submitBookingRequest } from '../lib/submitBookingRequest';
 import { CheckIcon, PhoneIcon, SparkleIcon } from './icons';
 
 const serviceOptions = [
-  ...services
-    .filter((service) => service.id !== 'addon')
-    .map((service) => ({ id: service.id, label: service.title })),
+  ...services.map((service) => ({ id: service.id, label: service.title })),
   ...specialtyServices.cards.map((card) => ({ id: card.id, label: card.title })),
   { id: 'not-sure', label: 'Not sure yet' },
 ];
