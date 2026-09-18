@@ -1,5 +1,5 @@
 import Logo from './Logo';
-import { business, nav } from '../data/content';
+import { business, footerNav } from '../data/content';
 import { PhoneIcon, MailIcon, MapPinIcon, FacebookIcon } from './icons';
 
 export default function Footer() {
@@ -7,16 +7,17 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-lavender pt-10">
-      {/* Gingham strip — a quiet echo of the hero's signature texture */}
       <div className="h-3 w-full bg-gingham" aria-hidden="true" />
 
       <div className="mx-auto max-w-6xl px-5 pb-10 pt-8 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr]">
           <div>
-            <Logo variant="footer" withWordmark />
+            <a href="/" aria-label="Aunt B's Cleaning Services home">
+              <Logo variant="footer" withWordmark />
+            </a>
             <p className="mt-4 max-w-xs text-sm text-ink/65">
-              Friendly, detail-focused residential cleaning for busy homes
-              and families.
+              Friendly, detail-focused residential cleaning for busy homes,
+              move-outs, turnovers, and recurring service.
             </p>
             <a
               href={business.facebookUrl}
@@ -34,12 +35,9 @@ export default function Footer() {
               Quick links
             </p>
             <ul className="mt-3 space-y-2">
-              {nav.map((item) => (
+              {footerNav.map((item) => (
                 <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="text-sm text-ink/70 hover:text-hotpink"
-                  >
+                  <a href={item.href} className="text-sm text-ink/70 hover:text-hotpink">
                     {item.label}
                   </a>
                 </li>
@@ -59,9 +57,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${business.email}`} className="flex items-center gap-2 hover:text-hotpink">
-                  <MailIcon className="h-4 w-4 text-hotpink" />
-                  {business.email}
+                <a href={`mailto:${business.email}`} className="flex items-start gap-2 hover:text-hotpink">
+                  <MailIcon className="mt-0.5 h-4 w-4 flex-shrink-0 text-hotpink" />
+                  <span className="break-all">{business.email}</span>
                 </a>
               </li>
               <li className="flex items-start gap-2">
@@ -69,6 +67,15 @@ export default function Footer() {
                 {business.serviceArea}
               </li>
             </ul>
+
+            <div className="mt-5 flex flex-wrap gap-2">
+              <a href="/pricing" className="rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-purple-deep hover:text-hotpink">
+                Pricing
+              </a>
+              <a href="/book" className="rounded-full bg-hotpink-dark px-3 py-1.5 text-xs font-semibold text-white">
+                Request service
+              </a>
+            </div>
           </div>
         </div>
 
