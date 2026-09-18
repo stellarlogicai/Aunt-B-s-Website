@@ -6,7 +6,7 @@
     <title>Aunt B's Cleaning Services | Making Homes Shine</title>
     <meta
       name="description"
-      content="Friendly, detail-focused residential cleaning in your area. Standard, deep, move-in/out, and recurring cleaning. Request a free quote today."
+      content="Friendly, detail-focused residential cleaning in Bolivar, Missouri and surrounding areas. Browse services, understand pricing, request a cleaning, or ask for a quote."
     />
     <meta name="theme-color" content="#E23F84" />
 
@@ -21,17 +21,9 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 
-    <!--
-      Netlify Forms detection (inert unless deployed on Netlify).
-      Netlify scans the *built* static HTML for forms marked data-netlify
-      to register them — it can't see forms rendered later by React. This
-      hidden replica mirrors the real quote form's field names so Netlify
-      Forms is ready to go the moment this site is deployed there. The
-      actual form a visitor fills out lives in src/components/QuoteForm.jsx;
-      this one is never shown or used directly.
-      See src/lib/submitQuote.js ("OPTION A") for how to wire up the
-      matching fetch() call once you're ready to go live on Netlify.
-    -->
+    <!-- Static Netlify Forms replicas. Netlify scans built HTML, so these
+         hidden forms register the React-driven quote and booking-request
+         forms without exposing duplicate visible forms to customers. -->
     <form name="quote-request" method="POST" data-netlify="true" netlify-honeypot="botField" hidden>
       <input type="text" name="name" />
       <input type="tel" name="phone" />
@@ -49,6 +41,32 @@
       <input type="text" name="sourceDetail" />
       <input type="text" name="leadStatus" />
       <input type="text" name="leadCost" />
+      <input type="text" name="submittedAt" />
+      <input type="text" name="botField" />
+    </form>
+
+    <form name="booking-request" method="POST" data-netlify="true" netlify-honeypot="botField" hidden>
+      <input type="text" name="serviceId" />
+      <input type="text" name="serviceType" />
+      <input type="text" name="frequency" />
+      <input type="text" name="homeSize" />
+      <input type="text" name="bedrooms" />
+      <input type="text" name="bathrooms" />
+      <input type="text" name="pets" />
+      <input type="text" name="street" />
+      <input type="text" name="city" />
+      <input type="text" name="zip" />
+      <input type="date" name="preferredDate" />
+      <input type="text" name="timeWindow" />
+      <input type="text" name="access" />
+      <input type="text" name="name" />
+      <input type="tel" name="phone" />
+      <input type="email" name="email" />
+      <textarea name="notes"></textarea>
+      <input type="text" name="leadSource" />
+      <input type="text" name="sourceDetail" />
+      <input type="text" name="leadStatus" />
+      <input type="text" name="requestType" />
       <input type="text" name="submittedAt" />
       <input type="text" name="botField" />
     </form>
