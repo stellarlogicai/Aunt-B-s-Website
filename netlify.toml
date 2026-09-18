@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Netlify Forms needs the hidden static form replica (see index.html) to be
+# present in the published HTML, which it is — no extra forms config needed
+# here. This file just pins the build command/publish directory so deploys
+# are reproducible regardless of how the site is connected to Netlify.

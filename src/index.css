@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Keep anchored sections clear of the sticky header when jumped to via nav */
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
+  :focus-visible {
+    outline: 3px solid #4B2E72;
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-body font-semibold text-sm sm:text-base transition-all duration-200 focus-visible:outline-offset-4;
+  }
+
+  .btn-primary {
+    @apply btn bg-hotpink-dark text-white shadow-soft hover:bg-hotpink hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-purple border-2 border-purple/20 hover:border-purple hover:-translate-y-0.5 active:translate-y-0;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-white/80 px-4 py-1.5 text-sm font-medium text-purple shadow-sm ring-1 ring-purple/10;
+  }
+
+  .section-eyebrow {
+    @apply font-script text-2xl text-hotpink leading-none;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl sm:text-4xl font-semibold text-purple-deep tracking-tight;
+  }
+}
