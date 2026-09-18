@@ -138,3 +138,30 @@ short privacy note above the submit button.
 - Reduced-motion preferences are respected (animations shorten automatically).
 - No paid or external UI libraries — icons and the FAQ accordion are
   hand-built so the project has zero non-React runtime dependencies.
+
+## Customer-facing site routes
+
+The customer-facing site now supports:
+
+- `/` — home / conversion page
+- `/services` — service overview
+- `/services/:serviceId` — individual cleaning service details
+- `/pricing` — pricing approach and current specialty starting prices
+- `/book` — multi-step booking request flow
+- `/about` — business story
+- `/gallery` — before/after gallery shell
+- `/faq` — customer FAQ
+- `/contact` — direct contact + quote request
+- `/policies` — scheduling and service information
+
+Netlify SPA fallback is provided by `public/_redirects`.
+
+### Booking request boundary
+
+The `/book` flow intentionally creates a **booking request**, not a confirmed appointment.
+It captures customer, service, home, date, and contact information through Netlify Forms.
+Availability, final scope, and final pricing still require human confirmation.
+
+Do not connect this flow directly to ServicesOS until ServicesOS exposes an explicitly approved
+public booking/lead boundary. When that exists, ServicesOS should remain authoritative for
+service catalog, pricing rules, availability, and final booking creation.

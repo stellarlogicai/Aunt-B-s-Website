@@ -16,18 +16,30 @@ export const business = {
 };
 
 export const nav = [
-  { label: 'Services', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'Gallery', href: '#gallery' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#quote' },
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Book', href: '/book' },
+  { label: 'About', href: '/about' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
+];
+
+export const footerNav = [
+  { label: 'Services', href: '/services' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'Book a Cleaning', href: '/book' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Service Information', href: '/policies' },
 ];
 
 export const hero = {
   headline: 'Reliable cleaning help for busy homes, move-outs, and fresh starts.',
   subheadline:
     "Aunt B's Cleaning Services helps with recurring residential cleaning, deep cleans, move-out cleans, and real-estate prep cleaning.",
-  primaryCta: { label: 'Get a Free Cleaning Quote', href: '#quote' },
+  primaryCta: { label: 'Request a Cleaning', href: '/book' },
   secondaryCta: { label: 'Call or Text', href: business.phoneHref },
   trustChips: [
     { label: 'Local Service', icon: 'home' },
@@ -42,6 +54,7 @@ export const services = [
     id: 'standard',
     icon: 'home',
     title: 'Standard Cleaning',
+    shortLabel: 'Standard cleaning',
     description:
       'Regular upkeep that keeps every room fresh, tidy, and welcoming.',
     bullets: [
@@ -50,11 +63,14 @@ export const services = [
       'Kitchen & bathroom refresh',
       'Trash removal & tidying',
     ],
+    pricingLabel: 'Personalized quote',
+    bestFor: 'Routine upkeep, busy households, and homes that need consistent maintenance.',
   },
   {
     id: 'deep',
     icon: 'sparkle',
     title: 'Deep Cleaning',
+    shortLabel: 'Deep cleaning',
     description: 'A top-to-bottom reset for homes that need extra love.',
     bullets: [
       'Baseboards & window sills',
@@ -62,11 +78,14 @@ export const services = [
       'Grout & tile detailing',
       'Ceiling fans & light fixtures',
     ],
+    pricingLabel: 'Personalized quote',
+    bestFor: 'First visits, seasonal resets, guest-ready cleaning, and homes that need extra detail work.',
   },
   {
     id: 'move',
     icon: 'box',
     title: 'Move-In / Move-Out Cleaning',
+    shortLabel: 'Move-in / move-out cleaning',
     description: 'A spotless start (or finish) for your next chapter.',
     bullets: [
       'Full empty-home deep clean',
@@ -74,11 +93,14 @@ export const services = [
       'Closets & shelving wiped down',
       'Move-day ready in one visit',
     ],
+    pricingLabel: 'Personalized quote',
+    bestFor: 'Empty homes, apartment turnovers, moving day preparation, and final cleanups.',
   },
   {
     id: 'realestate',
     icon: 'box',
     title: 'Real-Estate Prep & Turnover Cleaning',
+    shortLabel: 'Real-estate / turnover cleaning',
     description:
       'Listing-ready and guest-ready cleans for agents, landlords, and short-term rental hosts.',
     bullets: [
@@ -87,11 +109,14 @@ export const services = [
       'Short-term rental / Airbnb turnover',
       'Quick-turnaround scheduling',
     ],
+    pricingLabel: 'Personalized quote',
+    bestFor: 'Agents, landlords, rental turnovers, listing preparation, and short-term rental resets.',
   },
   {
     id: 'recurring',
     icon: 'repeat',
     title: 'Recurring Cleaning',
+    shortLabel: 'Recurring cleaning',
     description:
       'Weekly, biweekly, or monthly visits that fit your routine.',
     bullets: [
@@ -100,11 +125,14 @@ export const services = [
       'Easy to reschedule or adjust',
       'Loyalty-friendly recurring pricing',
     ],
+    pricingLabel: 'Personalized quote',
+    bestFor: 'Households that want a predictable cleaning routine instead of starting over each visit.',
   },
   {
     id: 'addon',
     icon: 'plus',
     title: 'Add-On Services',
+    shortLabel: 'Add-on services',
     description: 'A few extra touches to make your visit go further.',
     bullets: [
       'Inside oven & refrigerator',
@@ -112,6 +140,8 @@ export const services = [
       'Interior window cleaning',
       'Garage or patio sweep',
     ],
+    pricingLabel: 'Quoted with your cleaning',
+    bestFor: 'Customers who want to add specific tasks to an already-planned cleaning visit.',
   },
 ];
 
@@ -147,6 +177,35 @@ export const whyChooseUs = [
       "A real local business that treats your home the way we'd treat our own.",
   },
 ];
+
+export const howItWorks = {
+  eyebrow: 'Simple from the start',
+  heading: 'From browsing to a confirmed cleaning',
+  description:
+    'See what fits, tell us about your home, request a date, and we will confirm the details with you before the appointment is final.',
+  steps: [
+    {
+      number: '01',
+      title: 'Choose what you need',
+      description: 'Compare services and see how pricing works before you send anything.',
+    },
+    {
+      number: '02',
+      title: 'Tell us about the home',
+      description: 'Share the service, home details, pets, access notes, and any special requests.',
+    },
+    {
+      number: '03',
+      title: 'Request a preferred date',
+      description: 'Choose a preferred day and time window. This is a request, not an automatic confirmation.',
+    },
+    {
+      number: '04',
+      title: 'We confirm the details',
+      description: 'Aunt B’s follows up to confirm availability, scope, and the final quote before service.',
+    },
+  ],
+};
 
 export const about = {
   eyebrow: 'Hi, neighbor!',
@@ -232,6 +291,42 @@ export const specialtyServices = {
     'Light refresh visits are limited to the agreed tasks and time window. Full kitchens, bathrooms, floors, deep cleaning, laundry, dishes, or whole-home cleaning may require a standard cleaning quote.',
 };
 
+export const pricing = {
+  eyebrow: 'Clear before we clean',
+  heading: 'Pricing that matches the actual job',
+  intro:
+    'Full-home cleaning is quoted from the real scope instead of using a one-size-fits-all number. Home size, condition, service type, frequency, and requested extras can all change the amount of work.',
+  factors: [
+    'Home size and layout',
+    'Current condition and level of detail needed',
+    'One-time versus recurring frequency',
+    'Move-in, move-out, or turnover scope',
+    'Add-ons and special requests',
+    'Travel outside the normal service area when applicable',
+  ],
+  fullServiceNote:
+    'Standard, deep, move-in/move-out, real-estate, recurring, and add-on cleaning are currently priced by personalized quote.',
+  specialtyNote:
+    'Specialty plant-care visits already have starting prices because the visit scope is intentionally smaller and time-bounded.',
+};
+
+export const booking = {
+  eyebrow: 'Ready when you are',
+  heading: 'Request a Cleaning',
+  description:
+    'Send the details below and Aunt B’s will follow up to confirm availability, scope, and final pricing.',
+  confirmationNotice:
+    'Submitting this form requests a date and time. Your appointment is not confirmed until Aunt B’s contacts you and confirms the details.',
+  timeWindows: ['Morning', 'Afternoon', 'Evening', 'Flexible'],
+  frequencyOptions: ['One-time', 'Weekly', 'Biweekly', 'Monthly', 'Not sure yet'],
+  accessOptions: [
+    'I will be home',
+    'Door / keypad access',
+    'Someone else will provide access',
+    'Need to discuss',
+  ],
+};
+
 export const quoteForm = {
   eyebrow: 'Let’s get you scheduled',
   heading: 'Get Your Free Cleaning Quote',
@@ -275,6 +370,45 @@ export const quoteForm = {
     "Thanks! Your quote request was sent. Aunt B's Cleaning Services will follow up as soon as possible.",
 };
 
+export const serviceInformation = {
+  eyebrow: 'Good to know before service',
+  heading: 'Scheduling & Service Information',
+  intro:
+    'These notes explain how requests work today. They are intentionally simple and avoid promising fees or terms that have not been formally set.',
+  items: [
+    {
+      title: 'Booking confirmation',
+      body:
+        'Website submissions are requests. A cleaning is confirmed only after Aunt B’s confirms the date, scope, and final quote with you.',
+    },
+    {
+      title: 'Pricing and scope',
+      body:
+        'The final price is based on the agreed cleaning scope. If the requested work changes materially, the updated work and price should be discussed before it is added.',
+    },
+    {
+      title: 'Rescheduling or cancellation',
+      body:
+        'If plans change, contact Aunt B’s as early as possible. Any future cancellation or rescheduling fee policy will be communicated before it is enforced.',
+    },
+    {
+      title: 'Home access and pets',
+      body:
+        'Share access instructions and pet information before the visit so the cleaning can be planned safely and comfortably.',
+    },
+    {
+      title: 'Service area',
+      body:
+        'Bolivar, Missouri is the home service area. Travel outside the normal area may need to be confirmed and may affect pricing.',
+    },
+    {
+      title: 'Contact information',
+      body:
+        'Information submitted through the website is used to respond to your request and coordinate service. Do not include payment-card information in website notes.',
+    },
+  ],
+};
+
 export const faq = {
   eyebrow: 'Good to know',
   heading: 'Frequently Asked Questions',
@@ -297,7 +431,12 @@ export const faq = {
     {
       question: 'How do quotes work?',
       answer:
-        "Share a few details about your home using our quick form below and we'll follow up with a personalized, no-obligation quote, usually within one business day.",
+        "Share a few details about your home using our quick form and we'll follow up with a personalized, no-obligation quote.",
+    },
+    {
+      question: 'Is a website booking request automatically confirmed?',
+      answer:
+        'No. The website lets you request a preferred date and time. Aunt B’s confirms availability, scope, and final pricing with you before the appointment is final.',
     },
     {
       question: 'Do you offer deep cleans?',

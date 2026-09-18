@@ -1,9 +1,6 @@
 import { business } from '../data/content';
 import { SparkleIcon, PhoneIcon } from './icons';
 
-// Fixed CTA bar shown only on small screens, so a quote is always one tap
-// away while browsing on a phone. Pairs with the pb-24 spacer in App.jsx so
-// it never covers the footer content.
 export default function StickyQuoteBar() {
   return (
     <div
@@ -17,9 +14,9 @@ export default function StickyQuoteBar() {
       >
         <PhoneIcon className="h-5 w-5" />
       </a>
-      <a href="#quote" className="btn-primary flex-1">
+      <a href="/book" className="btn-primary flex-1">
         <SparkleIcon className="h-4 w-4" />
-        Get a Free Quote
+        Request a Cleaning
       </a>
     </div>
   );
