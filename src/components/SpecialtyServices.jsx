@@ -1,14 +1,6 @@
 import { specialtyServices } from '../data/content';
 import { Icon, CheckIcon, ClockIcon } from './icons';
 
-// ---------------------------------------------------------------------------
-// Specialty Services — Plant Care & Light Home Refresh
-//
-// Intentionally positioned and styled below the core cleaning services to
-// keep its small-visit pricing (from $30) clearly separate from the higher
-// minimums for standard cleaning jobs. Do not move this above Services.jsx.
-// ---------------------------------------------------------------------------
-
 function PriceTag({ price }) {
   return (
     <span className="inline-flex items-center gap-1 rounded-full bg-blush px-3 py-1 text-sm font-bold text-hotpink-dark ring-1 ring-hotpink/20">
@@ -47,11 +39,11 @@ function SpecialtyCard({ card }) {
       </div>
 
       <a
-        href="#quote"
+        href={`/book?service=${card.id}`}
         className="btn-primary mt-6 w-full"
-        aria-label={`Request a quote for ${card.title}`}
+        aria-label={`Request ${card.title}`}
       >
-        Message Us for a Quote
+        Request This Visit
       </a>
     </article>
   );
@@ -67,8 +59,6 @@ export default function SpecialtyServices() {
       className="border-t border-purple/8 bg-lavender py-16 sm:py-24"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        {/* Section header — visually lighter than the main Services heading to
-            reinforce that this is a secondary/specialty offering */}
         <div className="mx-auto max-w-2xl text-center">
           <p className="section-eyebrow">{eyebrow}</p>
           <h2 className="mt-2 font-display text-2xl font-semibold text-purple-deep sm:text-3xl">
@@ -77,14 +67,12 @@ export default function SpecialtyServices() {
           <p className="mt-3 text-sm text-ink/70">{description}</p>
         </div>
 
-        {/* Two service cards — side-by-side on desktop, stacked on mobile */}
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {cards.map((card) => (
             <SpecialtyCard key={card.id} card={card} />
           ))}
         </div>
 
-        {/* Pricing note and scope disclaimer — keeps expectations clear */}
         <div className="mt-8 flex flex-col gap-3 rounded-2xl bg-white/70 px-5 py-4 ring-1 ring-purple/8 sm:flex-row sm:items-start sm:gap-4 sm:px-6 sm:py-5">
           <ClockIcon className="mt-0.5 h-5 w-5 flex-shrink-0 text-purple/60 sm:mt-0" />
           <div className="space-y-1 text-sm text-ink/65">
